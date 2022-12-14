@@ -52,6 +52,9 @@ class Square extends Rectangle {
 function useIt(rectangle) {
   let width = rectangle._width;
   rectangle.height = 10;
+
+  // that is the point, a function that takes a base class should be able to take a derive class
+  // without breaking the functionality in any way
   console.log(`expected area ${10 * width}`);
   console.log(`received area ${rectangle.area}`);
 }
