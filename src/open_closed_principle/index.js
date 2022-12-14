@@ -69,14 +69,14 @@ class andSpecification {
   }
 }
 
-class OPPFilter {
+class OCPFilter {
   filter(products, specification) {
     return products.filter((product) => specification.isSatisfied(product));
   }
 }
 
 // filter by color
-const goodFilter = new OPPFilter();
+const goodFilter = new OCPFilter();
 const goodFiltereByColor = goodFilter.filter(
   products,
   new colorSpecification("red")
@@ -86,7 +86,7 @@ console.log({ goodFilter: goodFiltereByColor });
 // filter by color and size
 const redSmallSpecifications = new andSpecification(
   new colorSpecification("red"),
-  new sizeSpecification("medium")
+  new sizeSpecification("small")
 );
 const redSmallProducts = goodFilter.filter(products, redSmallSpecifications);
 console.log({ redSmallProducts });
